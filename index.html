@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie | Explore Restaurants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+       <img src="assets/logos/khana.svg" class="site-logo">
+      <h1 class="brand">Foodie</h1>
+      <input type="text" id="search-bar" placeholder="Search for restaurants, dishes, or cuisines...">
+      <div class="auth-buttons">
+        <button onclick="toggleAuth('login')">Login</button>
+        <button onclick="toggleAuth('signup')">Sign Up</button>
+        <a href="profile.html" class="profile-btn">Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="hero">
+      <h2>Discover the best food & drinks</h2>
+      <p>Find the perfect meal for every mood!</p>
+      <button class="explore-btn">Explore Restaurants</button>
+    </section>
+
+    <!-- Restaurant Filters -->
+    <div class="filters">
+      <select id="cuisine-filter">
+        <option value="">Select Cuisine</option>
+        <option value="Indian">Indian</option>
+        <option value="Italian">Italian</option>
+        <option value="Chinese">Chinese</option>
+      </select>
+      <select id="rating-filter">
+        <option value="">Select Rating</option>
+        <option value="4">4+ Stars</option>
+        <option value="3">3+ Stars</option>
+      </select>
+      <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <div class="restaurant-list">
+      <div class="restaurant-card">
+        <img src="assets/images/download.jpeg" >
+        <h3>INDIAN RESTUARANT</h3>
+        <p>Indian Cuisine - 5 Stars</p>
+      </div>
+      <div class="restaurant-card">
+        <img src="assets/images/italian.jpeg" >
+        <h3>ITALIAN RESTUARANT</h3>
+        <p>Italian Cuisine - 4 Stars</p>
+    </div>
+        <div class="restaurant-card">
+        <img src="assets/images/chinese.jpeg" >
+        <h3>CHINESE RESTUARANT</h3>
+        <p>Chinese Cuisine - 5 Stars</p>
+      </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Foodie. All rights reserved.</p>
+  </footer>
+
+  <!-- Authentication Modal -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content auth-card">
+      <span class="close" onclick="toggleAuth()">&times;</span>
+      <h2 id="auth-title">Login</h2>
+      <form id="auth-form" onsubmit="handleAuth(event)">
+        <input type="text" id="username" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" id="auth-submit">Submit</button>
+      </form>
+      <p id="toggle-auth-text">
+        Don't have an account? <a href="#" onclick="switchAuth('signup')">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
